@@ -1,0 +1,22 @@
+# This file was generated based on ".graphqlconfig". Do not edit manually.
+
+schema {
+    query: Query
+    mutation: Mutation
+}
+
+type Argonaut {
+    id: Float!
+    name: String!
+}
+
+type Mutation {
+    addArgonaut(name: String!): Argonaut!
+    clearArgonauts: Boolean!
+    deleteArgonaut(id: Float!): Boolean!
+    updateArgonaut(id: Float!, name: String!): Argonaut!
+}
+
+type Query {
+    argonauts: [Argonaut!]!
+}

@@ -1,0 +1,17 @@
+<div class="flex items-center justify-between mb-4">
+            <span class="font-medium text-lg">
+                <span class="text-indigo-500">{{argonauts && argonauts.length}}</span>
+                Argonautes</span>
+
+    <span
+        (click)="sorted = !sorted"
+        [class.text-indigo-500]="sorted"
+        class="material-icons-outlined cursor-pointer text-gray-400 hover:text-gray-800 select-none
+                transition duration-200 ease-in-out">
+                sort_by_alpha</span>
+</div>
+
+
+<div class="grid lg:grid-cols-3 gap-4 md:grid-cols-2">
+    <app-argonaut *ngFor="let argonaut of sort()" [argonaut]="argonaut"></app-argonaut>
+</div>

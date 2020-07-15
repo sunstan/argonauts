@@ -1,0 +1,20 @@
+<h1 class="text-4xl font-thin mb-4 md:text-6xl md:mb-10">Les Argonautes</h1>
+
+
+<input
+    type="text"
+    [formControl]="input"
+    placeholder="Ajouter un(e) argonaute"
+    (keyup.enter)="input.valid && addArgonaut()"
+    class="w-full mb-6 md:w-1/2 h-12 bg-transparent border-b border-white border-opacity-50
+                focus:border-opacity-100 focus:outline-none placeholder-white placeholder-opacity-50 md:mr-6 md:mb-0
+                transition duration-200 ease-in-out"/>
+
+<button
+    type="button"
+    [disabled]="!input.valid"
+    [class.opacity-25]="!input.valid"
+    (click)="input.valid && addArgonaut()"
+    class="w-full h-12 bg-indigo-500 rounded hover:opacity-50 md:w-32 transition duration-200 ease-in-out">
+    Ajouter
+</button>

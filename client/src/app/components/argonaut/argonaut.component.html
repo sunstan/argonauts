@@ -1,0 +1,27 @@
+<div class="h-20 px-6 bg-white shadow rounded flex items-center justify-between">
+
+    <ng-container *ngIf="edit">
+        <input
+            type="text"
+            spellcheck="false"
+            [formControl]="input"
+            placeholder="Nom de l'argonaute"
+            (keyup.enter)="input.valid && updateArgonaut()"
+            class="w-full h-10 border-b border-solid border-gray-400 focus:border-gray-800 focus:outline-none
+                transition duration-200 ease-in-out mr-6"/>
+
+
+        <span class="material-icons-outlined cursor-pointer text-gray-400 hover:text-gray-800
+        transition duration-200 ease-in-out" (click)="toogleEdit()">close</span>
+
+    </ng-container>
+
+    <ng-container *ngIf="!edit">
+        <span class="flex-grow  mr-6">{{argonaut.name}}</span>
+        <span class="material-icons-outlined cursor-pointer text-gray-400 hover:text-gray-800
+        transition duration-200 ease-in-out mr-4" (click)="toogleEdit()">edit</span>
+        <span class="material-icons-outlined cursor-pointer text-gray-400 hover:text-gray-800
+        transition duration-200 ease-in-out" (click)="deleteArgonaut()">delete</span>
+    </ng-container>
+
+</div>
