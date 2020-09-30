@@ -63,7 +63,7 @@ export class ArgonautService {
                 deleteArgonaut(id: $id)
             }`,
         }).pipe(
-            switchMap(body => extract(body, 'updateArgonaut')),
+            switchMap(body => extract(body, 'deleteArgonaut')),
             catchError(err => of(err)),
         );
     }
